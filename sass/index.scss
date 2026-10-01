@@ -1,0 +1,232 @@
+//variables
+$fuente: "Font";
+
+$a: grey;
+$b: white;
+$c: cyan;
+$d: black;
+
+//mixin
+@mixin contenedor{
+    max-width: 1250px;
+    margin: auto auto;
+}
+@mixin flexbox($medidaJC: unset, $medidaAI: unset){
+    display: flex;
+    justify-content: $medidaJC;
+    align-items: $medidaAI;
+}
+
+//global
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: $d;
+}
+a{
+    text-decoration: none;
+    font-size: 25px;
+}
+.italic{
+    font-style: italic;
+}
+.bold{
+    font-weight: 700;
+}
+
+// estableciendo el size para las H
+@for $i from 0 through 3{
+    h#{$i + 1}{
+        font-size: 150px - ($i*40);
+    }
+}
+
+// diseños
+header{
+    // @include flexbox(space-between, center);
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        height: 30px;
+        margin-top: 45px;
+        position: relative;
+        z-index: 2;
+        gap: $a;
+        color: $b;
+    }
+    .menu{
+        display: flex;
+        gap: $a;
+        width: 40%;
+        height: 30px;
+        margin-top: 5px;
+        position: sticky;
+        z-index: 2;
+
+        a:hover{
+            color: $c;
+            text-decoration: underline;
+        }
+    }
+    .redes{
+        display: flex;
+        gap: $a;
+        width: 30%;
+        height: 30px;
+        margin-top: 5px;
+        position: relative;
+        z-index: 2;
+
+        a:hover{
+            color: $c;
+        }
+    }
+    .information{
+        display: block;
+        gap: $a;
+        width: 100%;
+        margin-top: 5px;
+        position: relative;
+        // z-index: 2;
+    }
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .capa{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.5;
+        mix-blend-mode: overlay;
+    }
+}
+
+// seccion de home
+.historia{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 50px auto;
+    background-color: $d;
+    color: $b;
+    text-align: center;
+}
+// seccion de reservas
+.reservas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 50px auto;
+    background-color: $d;
+    color: $b;
+    text-align: center;
+}
+// seccion de proximos
+.reseñas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 50px auto;
+    background-color: $d;
+    color: $b;
+    text-align: start;
+    .card{
+        width: 30%;
+        margin-top: 80PX;
+    }
+    .datos{
+        width: 60%;
+        margin-top: 150PX;
+        text-align: start;
+    }
+    .h3{
+        text-align: start;
+    }
+}   
+.nosotros{
+    display: flex;
+    align-items: center;
+    /* height: 80px; */
+    background-color: black;
+    padding: 0px 25px 0px 25px;
+}
+.logo2{
+    display: block;
+    width: 20%;
+    justify-content: center;
+}
+.logo2 img{
+    height: 40px;
+}
+.info{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    font-size: 12px;
+    font-family: fuente-space;
+    color: $b;
+}
+.social-media{
+    display: flex;
+    width: 20%;
+    justify-content: end;
+    align-items: end;
+}
+
+.menu-social ul{
+    display: flex;
+    list-style: none;
+}
+
+/* estilizar las etiquetas i */
+.social-media i{
+    padding: 25px ;
+    font-size: 25px;
+    color: $b;
+}
+.social-media i:hover{
+    color: $c;
+}
+
+
+.titulo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.card{
+    width: 30%;
+    margin: 35px 0;
+    box-shadow: 0 4px 8px 0 $a;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 $b;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+}
+
